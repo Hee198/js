@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="t.css" rel="stylesheet" type"text/css" />
+    
+    <style>
+  
+    table{
+    background-color: #EFE4B0;
+    font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+
+    <table id="table1" border="1">
+        <tr>
+            <td colspan="6" class="title"><img src="Mclogo.png" class="overlay-image"><h1>McDonald's </h1>
+            <div class="image-container">
+                
+            </div>
+            </td>
+        </tr>
+        <tr align="center">
+            <td><img src="bul.png" class="menuimg" id="bulimg"></td>
+            <td rowspan="4" width="110px" align="left">
+                <input type="checkbox" id="bul_sangchu" onclick="bul_updatePrice('bul_sangchu')">양상추 추가<br>
+                <input type="checkbox" id="bul_sauce" onclick="bul_updatePrice('bul_sauce')">소스 추가<br>
+                <input type="checkbox" id="bul_cheese" onclick="bul_updatePrice('bul_cheese')">치즈 추가<br>
+            </td>
+            <td><img src="cb.png" class="menuimg" id="cbimg"></td>
+            <td rowspan="4" width="110px" align="left">
+                <input type="checkbox" id="cb_sangchu" onclick="cb_updatePrice('cb_sangchu')">양상추 추가<br>
+                <input type="checkbox" id="cb_sauce" onclick="cb_updatePrice('cb_sauce')">소스 추가<br>
+                <input type="checkbox" id="cb_cheese" onclick="cb_updatePrice('cb_cheese')">치즈 추가<br>
+            </td>
+            <td><img src="mc.png" class="menuimg" id="mcimg"></td>
+            <td rowspan="4" width="110px" align="left">
+                <input type="checkbox" id="mc_sangchu" onclick="mc_updatePrice('mc_sangchu')">양상추 추가<br>
+                <input type="checkbox" id="mc_sauce" onclick="mc_updatePrice('mc_sauce')">소스 추가<br>
+                <input type="checkbox" id="mc_cheese" onclick="mc_updatePrice('mc_cheese')">치즈 추가<br>
+            </td>
+        </tr>
+        <tr align="center">
+            <td><input type="text" value="불고기버거(단품)" id="bulmenu"></td>
+            <td><input type="text" value="치즈버거(단품)" id="cbmenu"></td>
+            <td><input type="text" value="맥치킨(단품)" id="mcmenu"></td>
+        </tr>
+
+
+        
+        <tr align="center">
+            <td>
+                <input type="radio" name="bul_type" checked="checked" value="single" onclick="bulswImg('single')">SINGLE
+                <input type="radio" name="bul_type" value="set" onclick="bulswImg('set')">SET
+            </td>
+            <td>
+                <input type="radio" name="cb_type" checked="checked" value="single" onclick="cbswImg('single')">SINGLE
+                <input type="radio" name="cb_type" value="set" onclick="cbswImg('set')">SET
+            </td>
+            <td>
+                <input type="radio" name="mc_type" checked="checked" value="single" onclick="mcswImg('single')">SINGLE
+                <input type="radio" name="mc_type" value="set" onclick="mcswImg('set')">SET
+            </td>
+        </tr>
+        <tr align="center">
+            <td>가격<input type="text" value="4200" id="bulcash"></td>
+            <td>가격<input type="text" value="3600" id="cbcash"></td>
+            <td>가격<input type="text" value="4300" id="mccash"></td>
+        </tr>
+    </table>
+
+    <table id="table2" border="1">
+        <tr align="center">
+            <td><img src="ms.png" class="menuimg" id="msimg"></td>
+            <td rowspan="4" width="110px" align="left">
+                <input type="checkbox" id="ms_sangchu" onclick="ms_updatePrice('ms_sangchu')">양상추 추가<br>
+                <input type="checkbox" id="ms_sauce" onclick="ms_updatePrice('ms_sauce')">소스 추가<br>
+                <input type="checkbox" id="ms_cheese" onclick="ms_updatePrice('ms_cheese')">치즈 추가<br>
+            </td>
+            <td><img src="bm.png" class="menuimg" id="bmimg"></td>
+            <td rowspan="4" width="110px" align="left">
+                <input type="checkbox" id="bm_sangchu" onclick="bm_updatePrice('bm_sangchu')">양상추 추가<br>
+                <input type="checkbox" id="bm_sauce" onclick="bm_updatePrice('bm_sauce')">소스 추가<br>
+                <input type="checkbox" id="bm_cheese" onclick="bm_updatePrice('bm_cheese')">치즈 추가<br>
+            </td>
+            <td><img src="nt.png" class="menuimg" id="ntimg"></td>
+            <td rowspan="4" width="110px" align="left">
+                <input type="checkbox" id="nt_sangchu" onclick="nt_updatePrice('nt_sangchu')">양상추 추가<br>
+                <input type="checkbox" id="nt_sauce" onclick="nt_updatePrice('nt_sauce')">소스 추가<br>
+                <input type="checkbox" id="nt_cheese" onclick="nt_updatePrice('nt_cheese')">치즈 추가<br>
+            </td>
+        </tr>
+        <tr align="center">
+            <td><input type="text" value="상하이버거(단품)" id="msmenu"></td>
+            <td><input type="text" value="빅맥(단품)" id="bmmenu"></td>
+            <td><input type="text" value="1955(단품)" id="ntmenu"></td>
+        </tr>
+
+        <tr align="center">
+            <td>
+                <input type="radio" name="ms_type" checked="checked" value="single" onclick="msswImg('single')">SINGLE
+                <input type="radio" name="ms_type" value="set" onclick="msswImg('set')">SET
+            </td>
+            <td>
+                <input type="radio" name="bm_type" checked="checked" value="single" onclick="bmswImg('single')">SINGLE
+                <input type="radio" name="bm_type" value="set" onclick="bmswImg('set')">SET
+            </td>
+            <td>
+                <input type="radio" name="nt_type" checked="checked" value="single" onclick="ntswImg('single')">SINGLE
+                <input type="radio" name="nt_type" value="set" onclick="ntswImg('set')">SET
+            </td>
+        </tr>
+        <tr align="center">
+            <td>가격<input type="text" value="6300" id="mscash"></td>
+            <td>가격<input type="text" value="6300" id="bmcash"></td>
+            <td>가격<input type="text" value="6000" id="ntcash"></td>
+        </tr>
+    </table>
+
+    <table id="table3" border="1">
+        <tr align="center">
+            <td><img src="qc.png" class="menuimg" id="qcimg"></td>
+            <td rowspan="4" width="110px" align="left">
+                <input type="checkbox" id="qc_sangchu" onclick="qc_updatePrice('qc_sangchu')">양상추 추가<br>
+                <input type="checkbox" id="qc_sauce" onclick="qc_updatePrice('qc_sauce')">소스 추가<br>
+                <input type="checkbox" id="qc_cheese" onclick="qc_updatePrice('qc_cheese')">치즈 추가<br>
+            </td>
+            <td><img src="ss.png" class="menuimg" id="ssimg"></td>
+            <td rowspan="4" width="110px" align="left">
+                <input type="checkbox" id="ss_sangchu" onclick="ss_updatePrice('ss_sangchu')">양상추 추가<br>
+                <input type="checkbox" id="ss_sauce" onclick="ss_updatePrice('ss_sauce')">소스 추가<br>
+                <input type="checkbox" id="ss_cheese" onclick="ss_updatePrice('ss_cheese')">치즈 추가<br>
+            </td>
+    
+
+        </tr>
+        <tr align="center">
+            <td><input type="text" value="쿼터파운드(단품)" id="qcmenu"></td>
+            <td><input type="text" value="슈슈버거거(단품)" id="ssmenu"></td>
+      
+        </tr>
+
+
+        
+        <tr align="center">
+            <td>
+                <input type="radio" name="qc_type" checked="checked" value="single" onclick="qcswImg('single')">SINGLE
+                <input type="radio" name="qc_type" value="set" onclick="qcswImg('set')">SET
+            </td>
+            <td>
+                <input type="radio" name="ss_type" checked="checked" value="single" onclick="ssswImg('single')">SINGLE
+                <input type="radio" name="ss_type" value="set" onclick="ssswImg('set')">SET
+            </td>
+        </tr>
+        <tr align="center">
+            <td>가격<input type="text" value="5000" id="qccash"></td>
+            <td>가격<input type="text" value="5500" id="sscash"></td>
+        </tr>
+    </table>
+
+    <div id="cart">
+        <h3>장바구니</h3>
+        <div>
+            <button id="decrease">제거</button>
+            <span id="quantity">0</span>개<br>
+            <button id="increase">추가</button>
+        </div>
+        <input type="text" id="totalPrice" value="0 원" style="border: none; background: none; font-size: 1.2em;"/>
+    </div>
+
+    <script>
+        function bul_updatePrice(bul_chk) {
+            let baseCash = Number(document.getElementById("bulcash").value);
+            let addPrice = 0;
+
+            if (bul_chk == 'bul_sangchu') {
+                if (document.getElementById("bul_sangchu").checked) addPrice += 300;
+                else addPrice -= 300;
+            } else if (bul_chk == 'bul_sauce') {
+                if (document.getElementById("bul_sauce").checked) addPrice += 500;
+                else addPrice -= 500;
+            } else if (bul_chk == 'bul_cheese') {
+                if (document.getElementById("bul_cheese").checked) addPrice += 1000;
+                else addPrice -= 1000;
+            }
+
+            document.getElementById("bulcash").value = baseCash + addPrice;
+        }
+
+        function cb_updatePrice(cb_chk) {
+            let baseCash = Number(document.getElementById("cbcash").value);
+            let addPrice = 0;
+
+            if (cb_chk == 'cb_sangchu') {
+                if (document.getElementById("cb_sangchu").checked) addPrice += 300;
+                else addPrice -= 300;
+            } else if (cb_chk == 'cb_sauce') {
+                if (document.getElementById("cb_sauce").checked) addPrice += 500;
+                else addPrice -= 500;
+            } else if (cb_chk == 'cb_cheese') {
+                if (document.getElementById("cb_cheese").checked) addPrice += 1000;
+                else addPrice -= 1000;
+            }
+
+            document.getElementById("cbcash").value = baseCash + addPrice;
+        }
+
+        function mc_updatePrice(mc_chk) {
+            let baseCash = Number(document.getElementById("mccash").value);
+            let addPrice = 0;
+
+            if (mc_chk == 'mc_sangchu') {
+                if (document.getElementById("mc_sangchu").checked) addPrice += 300;
+                else addPrice -= 300;
+            } else if (mc_chk == 'mc_sauce') {
+                if (document.getElementById("mc_sauce").checked) addPrice += 500;
+                else addPrice -= 500;
+            } else if (mc_chk == 'mc_cheese') {
+                if (document.getElementById("mc_cheese").checked) addPrice += 1000;
+                else addPrice -= 1000;
+            }
+
+            document.getElementById("mccash").value = baseCash + addPrice;
+        }
+
+        function ms_updatePrice(ms_chk) {
+            let baseCash = Number(document.getElementById("mscash").value);
+            let addPrice = 0;
+
+            if (ms_chk == 'ms_sangchu') {
+                if (document.getElementById("ms_sangchu").checked) addPrice += 300;
+                else addPrice -= 300;
+            } else if (ms_chk == 'ms_sauce') {
+                if (document.getElementById("ms_sauce").checked) addPrice += 500;
+                else addPrice -= 500;
+            } else if (ms_chk == 'ms_cheese') {
+                if (document.getElementById("ms_cheese").checked) addPrice += 1000;
+                else addPrice -= 1000;
+            }
+
+            document.getElementById("mscash").value = baseCash + addPrice;
+        }
+
+        function bm_updatePrice(bm_chk) {
+            let baseCash = Number(document.getElementById("bmcash").value);
+            let addPrice = 0;
+
+            if (bm_chk == 'bm_sangchu') {
+                if (document.getElementById("bm_sangchu").checked) addPrice += 300;
+                else addPrice -= 300;
+            } else if (bm_chk == 'bm_sauce') {
+                if (document.getElementById("bm_sauce").checked) addPrice += 500;
+                else addPrice -= 500;
+            } else if (bm_chk == 'bm_cheese') {
+                if (document.getElementById("bm_cheese").checked) addPrice += 1000;
+                else addPrice -= 1000;
+            }
+
+            document.getElementById("bmcash").value = baseCash + addPrice;
+        }
+
+        function nt_updatePrice(nt_chk) {
+            let baseCash = Number(document.getElementById("ntcash").value);
+            let addPrice = 0;
+
+            if (nt_chk == 'nt_sangchu') {
+                if (document.getElementById("nt_sangchu").checked) addPrice += 300;
+                else addPrice -= 300;
+            } else if (nt_chk == 'nt_sauce') {
+                if (document.getElementById("nt_sauce").checked) addPrice += 500;
+                else addPrice -= 500;
+            } else if (nt_chk == 'nt_cheese') {
+                if (document.getElementById("nt_cheese").checked) addPrice += 1000;
+                else addPrice -= 1000;
+            }
+
+            document.getElementById("ntcash").value = baseCash + addPrice;
+        }
+
+        function qc_updatePrice(qc_chk) {
+            let baseCash = Number(document.getElementById("qccash").value);
+            let addPrice = 0;
+
+            if (qc_chk == 'qc_sangchu') {
+                if (document.getElementById("qc_sangchu").checked) addPrice += 300;
+                else addPrice -= 300;
+            } else if (qc_chk == 'qc_sauce') {
+                if (document.getElementById("qc_sauce").checked) addPrice += 500;
+                else addPrice -= 500;
+            } else if (qc_chk == 'qc_cheese') {
+                if (document.getElementById("qc_cheese").checked) addPrice += 1000;
+                else addPrice -= 1000;
+            }
+
+            document.getElementById("qccash").value = baseCash + addPrice;
+        }
+
+        function ss_updatePrice(ss_chk) {
+            let baseCash = Number(document.getElementById("sscash").value);
+            let addPrice = 0;
+
+            if (ss_chk == 'ss_sangchu') {
+                if (document.getElementById("ss_sangchu").checked) addPrice += 300;
+                else addPrice -= 300;
+            } else if (ss_chk == 'ss_sauce') {
+                if (document.getElementById("ss_sauce").checked) addPrice += 500;
+                else addPrice -= 500;
+            } else if (ss_chk == 'ss_cheese') {
+                if (document.getElementById("ss_cheese").checked) addPrice += 1000;
+                else addPrice -= 1000;
+            }
+
+            document.getElementById("sscash").value = baseCash + addPrice;
+        }
+
+        function bulswImg(bul_Type) {
+            var Type = bul_Type
+            money = Number(document.getElementById("bulcash").value);
+            var imgElement = document.getElementById("bulimg");
+            
+            if (bul_Type == "single") {
+                imgElement.style.transform = "translateX(-100%)"; 
+                setTimeout(function(){
+                document.getElementById("bulimg").src = "bul.png";
+                imgElement.style.transform = "translateX(0)"; 
+            },100);
+                document.getElementById("bulmenu").value = "단품(SINGLE)";
+                document.getElementById("bulcash").value = money-=2400;
+                
+            } else if (bul_Type == "set") {
+                imgElement.style.transform = "translateX(-100%)"; 
+                setTimeout(function(){
+                document.getElementById("bulimg").src= "bulSet.png";
+                imgElement.style.transform = "translateX(0)"; 
+            },100);
+                document.getElementById("bulmenu").value= "세트(SET)";
+                document.getElementById("bulcash").value= money+=2400;
+            }
+        }
+
+        function cbswImg(cb_Type) {
+            var Type = cb_Type
+            money = Number(document.getElementById("cbcash").value);
+            var imgElement = document.getElementById("cbimg");
+            if (cb_Type == "single") {
+                imgElement.style.transform = "translateX(-100%)"; 
+                setTimeout(function(){
+                document.getElementById("cbimg").src = "cb.png";
+                imgElement.style.transform = "translateX(0)"; 
+            },100);
+                document.getElementById("cbmenu").value = "단품(SINGLE)";
+                document.getElementById("cbcash").value = money-=2400;
+                
+            } else if (cb_Type == "set") {
+                imgElement.style.transform = "translateX(-100%)"; 
+                setTimeout(function(){
+                document.getElementById("cbimg").src= "cbSet.png";
+                imgElement.style.transform = "translateX(0)"; 
+            },100);
+                document.getElementById("cbmenu").value= "세트(SET)";
+                document.getElementById("cbcash").value= money+=2400;
+            }
+        }
+
+        function mcswImg(mc_Type) {
+            var Type = mc_Type
+            money = Number(document.getElementById("mccash").value);
+            var imgElement = document.getElementById("mcimg");
+            if (mc_Type == "single") {
+                imgElement.style.transform = "translateX(-100%)"; 
+                setTimeout(function(){
+                document.getElementById("mcimg").src = "mc.png";
+                imgElement.style.transform = "translateX(0)"; 
+            },100);
+                document.getElementById("mcmenu").value = "단품(SINGLE)";
+                document.getElementById("mccash").value = money-=2400;
+                
+            } else if (mc_Type == "set") {
+                imgElement.style.transform = "translateX(-100%)"; 
+                setTimeout(function(){
+                document.getElementById("mcimg").src= "mcSet.png";
+                imgElement.style.transform = "translateX(0)"; 
+            },100);
+                document.getElementById("mcmenu").value= "세트(SET)";
+                document.getElementById("mccash").value= money+=2400;
+            }
+        }
+
+        
+        function msswImg(ms_Type) {
+            var Type = ms_Type
+            money = Number(document.getElementById("mscash").value);
+            var imgElement = document.getElementById("msimg");
+            if (ms_Type == "single") {
+                imgElement.style.transform = "translateX(-100%)"; 
+            setTimeout(function(){
+                document.getElementById("msimg").src = "ms.png";
+                imgElement.style.transform = "translateX(0)"; 
+            },100);
+                document.getElementById("msmenu").value = "단품(SINGLE)";
+                document.getElementById("mscash").value = money-=2400;
+                
+            } else if (ms_Type == "set") {
+                imgElement.style.transform = "translateX(-100%)"; 
+            setTimeout(function(){
+                document.getElementById("msimg").src= "msSet.png";
+                imgElement.style.transform = "translateX(0)";
+            },100);
+                document.getElementById("msmenu").value= "세트(SET)";
+                document.getElementById("mscash").value= money+=2400;
+            }
+        }
+
+        function bmswImg(bm_Type) {
+    var Type = bm_Type;
+     money = Number(document.getElementById("bmcash").value); 
+    var imgElement = document.getElementById("bmimg"); 
+
+    if (bm_Type == "single") {
+        imgElement.style.transform = "translateX(-100%)"; 
+        setTimeout(function(){
+            document.getElementById("bmimg").src = "bm.png";
+            imgElement.style.transform = "translateX(0)"; 
+        }, 100);
+        document.getElementById("bmmenu").value = "단품(SINGLE)";
+        money -=
+        document.getElementById("bmcash").value = money; 
+        
+    } else if (bm_Type == "set") {
+        imgElement.style.transform = "translateX(-100%)"; 
+        setTimeout(function(){
+            document.getElementById("bmimg").src = "bmSet.png";
+            imgElement.style.transform = "translateX(0)";
+        }, 100);
+        document.getElementById("bmmenu").value = "세트(SET)";
+        money += 2400; // money 업데이트
+        document.getElementById("bmcash").value = money; // 업데이트된 money를 bmcash에 할당
+    }
+}
+
+
+        function ntswImg(nt_Type) {
+            var Type = nt_Type
+            money = Number(document.getElementById("ntcash").value);
+            var imgElement = document.getElementById("ntimg"); // imgElement 정의
+            if (nt_Type == "single") {
+                imgElement.style.transform = "translateX(-100%)"; 
+                setTimeout(function(){
+                document.getElementById("ntimg").src = "nt.png";
+                imgElement.style.transform = "translateX(0)"; 
+            }, 100);
+                document.getElementById("ntmenu").value = "단품(SINGLE)";
+                document.getElementById("ntcash").value = money-=2400;
+                
+            } else if (nt_Type == "set") {
+                imgElement.style.transform = "translateX(-100%)"; 
+                setTimeout(function(){
+                document.getElementById("ntimg").src= "ntSet.png";
+                imgElement.style.transform = "translateX(0)";
+            }, 100);
+                document.getElementById("ntmenu").value= "세트(SET)";
+                document.getElementById("ntcash").value= money+=2400;
+            }
+        }
+
+        function qcswImg(qc_Type) {
+            var Type = qc_Type
+            money = Number(document.getElementById("qccash").value);
+            var imgElement = document.getElementById("qcimg");
+            if (qc_Type == "single") {
+                imgElement.style.transform = "translateX(-100%)"; 
+                setTimeout(function(){
+                document.getElementById("qcimg").src = "qc.png";
+                imgElement.style.transform = "translateX(0)"; 
+            }, 100);
+                document.getElementById("qcmenu").value = "단품(SINGLE)";
+                document.getElementById("qccash").value = money-=2400;
+                
+            } else if (qc_Type == "set") {
+                imgElement.style.transform = "translateX(-100%)"; 
+                setTimeout(function(){
+                document.getElementById("qcimg").src= "qcSet.png";
+                imgElement.style.transform = "translateX(0)"; 
+            }, 100);
+                document.getElementById("qcmenu").value= "세트(SET)";
+                document.getElementById("qccash").value= money+=2400;
+            }
+        }
+
+        
+        function ssswImg(ss_Type) {
+            var Type = ss_Type
+            money = Number(document.getElementById("sscash").value);
+            var imgElement = document.getElementById("ssimg");
+            if (ss_Type == "single") {
+                imgElement.style.transform = "translateX(-100%)"; 
+                setTimeout(function(){
+                document.getElementById("ssimg").src = "ss.png";
+                imgElement.style.transform = "translateX(0)"; 
+            }, 100);
+                document.getElementById("ssmenu").value = "단품(SINGLE)";
+                document.getElementById("sscash").value = money-=2400;
+                
+            } else if (ss_Type == "set") {
+                imgElement.style.transform = "translateX(-100%)"; 
+                setTimeout(function(){
+                document.getElementById("ssimg").src= "ssSet.png";
+                imgElement.style.transform = "translateX(0)"; 
+            }, 100);
+                document.getElementById("ssmenu").value= "세트(SET)";
+                document.getElementById("sscash").value= money+=2400;
+            }
+        }
+    </script>
+</body>
+</html>
